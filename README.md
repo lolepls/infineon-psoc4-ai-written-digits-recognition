@@ -28,7 +28,7 @@ This demo showcases the execution of a neural network able to detect digits from
 
 Connect the PSoCPSoC&trade; 4 SMAX board to the CAPSENSE&trade; sensing expansion board by using the ribbon cable included in the package. Use the 40-pin connector on the CAPSENSE&trade; sensing expansion board called "TOUCHPAD FLEX CONNECTOR" as shown in figure:
 
-![Connection ](img/connected_board.jpeg)
+![Connection ](Written-Digits-Recognition-PSoC4/img/connected_board.jpeg)
 
 
 **Note:** The PSoC&trade; 4 kits ship with KitProg2 installed. The ModusToolbox&trade; software requires KitProg3. Before using this code example, make sure that the board is upgraded to KitProg3. The tool and instructions are available in the [Firmware Loader](https://github.com/Infineon/Firmware-loader) GitHub repository. If you do not upgrade, you will see an error like "unable to find CMSIS-DAP device" or "KitProg firmware is out of date".
@@ -96,25 +96,25 @@ For more details, see the [Eclipse IDE for ModusToolbox&trade; software user gui
 
    **Figure 1. GUI displayed.**
 
-   ![GUI startup](img/gui-startup.jpeg)
+   ![GUI startup](Written-Digits-Recognition-PSoC4/img/gui-startup.jpeg)
 
 4. By keeping the kit oriented vertically, with the USB connector on the upper side and the CAPSENSE&trade; shield near you, use your finger to write a single digit from 0 to 9 on the CAPSENSE&trade; touchpad.
 Write the number by trying to exploit the full surface of the shield as shown in the following image:
 
    **Figure 2. Correct drawing orientation.**
-   ![Drawing example](img/drawing_example.jpg)
+   ![Drawing example](Written-Digits-Recognition-PSoC4/img/drawing_example.jpg)
 
    You will see the GUI showing your drawing in real time on the `Raw CAPSENSE Output` window: 
 
    **Figure 3. Real-time drawing being shown.**
-   ![Drawing realtime](img/gui-realtime-drawing.jpg)
+   ![Drawing realtime](Written-Digits-Recognition-PSoC4/img/gui-realtime-drawing.jpg)
 
    When your drawing is complete, simply lift your finger from the touchpad.
 
 5. The neural network will be triggered after 1 second without touch activity. Raw input will be preprocessed and fed into the neural network. The execution will return the confidence value for each digit, and the highest one will be selected as predicted digit:
 
    **Figure 4. Neural network inference results displayed.**
-   ![output](img/gui-output.jpg)
+   ![output](Written-Digits-Recognition-PSoC4/img/gui-output.jpg)
 
 6. Repeat steps 4 and 5 with different digits. The system can tolerate rotations and rescaling of the written digits up to a certain amount. Highest accuracy is obtained when digits are written by exploiting the full surface and keeping the orientation of the board as described above.
 
@@ -136,7 +136,7 @@ The example is composed by three core components:
 
 The firmware has been designed according to the following block scheme. A .pdf file is provided in the  `doc` folder.
 
-![firmware blocks](doc/WDR-PSoC4.png)
+![firmware blocks](Written-Digits-Recognition-PSoC4/doc/WDR-PSoC4.png)
 
 The main loop of the application keeps waiting for input data to be ready. If no data is available yet, the CAPSENSE scan loop is executed, where the touchpad waits until a finger is detected. When a finger is detected for the first time, touch coordinates are read and saved in an optimized data structure to keep track of the drawing. When the finger is lift, a timer counts until one second of time is elapsed. If the user keeps drawing, the timer is stopped and will be resumed when the finger will be lift again. Once the timer expires, the "acquired_data" flag is set to True to indicate that the user has finished the drawing. The data is then preprocessed (it is downscaled to match the expected input size for the neural network), and the "data_ready" flag is set to True. 
 
@@ -151,7 +151,7 @@ To achieve the execution of neural networks on PSoC4, a manual porting of the Te
 
 The neural network has been designed specifically by taking into account the constraints of the target device, by applying Tiny-ML oriented design techniques. The optimal architecture has been chosen among differet models of increasing complexity trained on the [MNIST public dataset](https://en.wikipedia.org/wiki/MNIST_database). The model is a standard Convolutional Neural Network with the following architecture:
 
-![Model](img/model.jpg)
+![Model](Written-Digits-Recognition-PSoC4/img/model.jpg)
 
 The model has a total of 5114 parameters.
 
