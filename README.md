@@ -31,7 +31,7 @@ This code example also delivers the TensorFlowLite Micro library compiled for PS
 
 ## Hardware setup
 
-Connect the PSoCPSoC&trade; 4 SMAX board to the CAPSENSE&trade; sensing expansion board by using the ribbon cable included in the package. Use the 40-pin connector on the CAPSENSE&trade; sensing expansion board called "TOUCHPAD FLEX CONNECTOR" as shown in figure:
+Connect the PSoC&trade; 4 SMAX board to the CAPSENSE&trade; sensing expansion board by using the ribbon cable included in the package. Use the 40-pin connector on the CAPSENSE&trade; sensing expansion board called "TOUCHPAD FLEX CONNECTOR" as shown in figure:
 
 ![Connection ](Written-Digits-Recognition-PSoC4/img/connected_board.jpeg)
 
