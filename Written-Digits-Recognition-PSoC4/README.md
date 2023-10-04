@@ -1,6 +1,10 @@
 # PSoC&trade; 4: AI-based Written Digits Recognition
 
-This demo showcases the execution of a neural network able to detect digits from 0 to 9 written with a finger on the CAPSENSE&trade; Touchpad using PSoC&trade; 4.
+This demo showcases the execution of a neural network able to detect digits from 0 to 9 written with a finger on the CAPSENSE™ Touchpad using Infineon PSoC™ 4 MCU to carry out the computation. PSoC 4 is a 32-bit MCU with a 48-MHz Arm® Cortex®-M0+ CPU, 384KB flash and 32KB SRAM available. The constraints given by the available memory and computational power frame this demo in the tinyML subfield of artificial intelligence. This is a fully functional example with an accuracy of more than 98%, making it suitable to be used as a basis for further improvement until a production quality level is reached.
+
+A Graphical User Interface shows in real time the drawing made on the capacitive shield and provides the neural network output in a visual and eye-catching manner.
+
+This code example also delivers the TensorFlowLite Micro library compiled for PSoC4.
 
 
 ## Requirements
