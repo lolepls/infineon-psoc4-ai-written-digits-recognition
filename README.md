@@ -51,7 +51,7 @@ This example requires no additional software or tools.
 
 Import the project in ModusToolbox&trade; by following the steps below:
 
-<details><summary><b>In Eclipse IDE for ModusToolbox&trade; software</b></summary>
+In Eclipse IDE for ModusToolbox&trade; software:
 
 1. Click the **Import Existing Application In-Place** link in the **Quick Panel** (or, use **File** > **New** > **ModusToolbox&trade; Application**).
 
@@ -102,21 +102,24 @@ For more details, see the [Eclipse IDE for ModusToolbox&trade; software user gui
 Write the number by trying to exploit the full surface of the shield as shown in the following image:
 
    **Figure 2. Correct drawing orientation.**
+   
    ![Drawing example](Written-Digits-Recognition-PSoC4/img/drawing_example.jpg)
 
    You will see the GUI showing your drawing in real time on the `Raw CAPSENSE Output` window: 
 
    **Figure 3. Real-time drawing being shown.**
+   
    ![Drawing realtime](Written-Digits-Recognition-PSoC4/img/gui-realtime-drawing.jpg)
 
    When your drawing is complete, simply lift your finger from the touchpad.
 
-5. The neural network will be triggered after 1 second without touch activity. Raw input will be preprocessed and fed into the neural network. The execution will return the confidence value for each digit, and the highest one will be selected as predicted digit:
+6. The neural network will be triggered after 1 second without touch activity. Raw input will be preprocessed and fed into the neural network. The execution will return the confidence value for each digit, and the highest one will be selected as predicted digit:
 
    **Figure 4. Neural network inference results displayed.**
+   
    ![output](Written-Digits-Recognition-PSoC4/img/gui-output.jpg)
 
-6. Repeat steps 4 and 5 with different digits. The system can tolerate rotations and rescaling of the written digits up to a certain amount. Highest accuracy is obtained when digits are written by exploiting the full surface and keeping the orientation of the board as described above.
+8. Repeat steps 4 and 5 with different digits. The system can tolerate rotations and rescaling of the written digits up to a certain amount. Highest accuracy is obtained when digits are written by exploiting the full surface and keeping the orientation of the board as described above.
 
 
 ## Debugging
@@ -195,17 +198,6 @@ Tools  | [ModusToolbox&trade; software](https://www.infineon.com/modustoolbox) â
 
 Infineon provides a wealth of data at www.infineon.com to help you select the right device, and quickly and effectively integrate it into your design.
 
-## Document history
-
-Document title: *CE230635* - *PSoC&trade; 4: Hello world*
-
- Version | Description of change
- ------- | ---------------------
- 1.0.0   | New code example
- 1.1.0   | Added support for new kits
- 2.0.0   | Major update to support ModusToolbox&trade; v3.0. <br> This version is not backward compatible with previous versions of ModusToolbox&trade; software.
-
-<br />
 
 ---------------------------------------------------------
 
